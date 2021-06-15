@@ -1,20 +1,19 @@
 import request from 'supertest';
-import images from '../routes/api/images';
-import routes from '../routes/api/routes';
+import { app } from '../index';
 
-describe('Test Images Endpoint', () => {
+describe('Test Endpoints', () => {
   it("Request '/' should return staus 200", async () => {
-    const result = await request(images).get('/').send();
+    const result = await request(app)
+      .get('/')
+      .send();
+
+    expect(result.status).toBe(200);
+  });
+  it("Request '/api' should return staus 200", async () => {
+    const result = await request(app)
+      .get('/api')
+      .send();
 
     expect(result.status).toBe(200);
   });
 });
-
-describe('Test API Endpoint', () => {
-    it("Request '/' should return staus 200", async () => {
-        const result = await request(routes).get('').send();
-
-        expect(result.status).toBe(200);
-    });
-});
-  

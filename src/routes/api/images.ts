@@ -1,11 +1,9 @@
 import express from 'express';
-import logger from '../../utilities/logger';
 import path from 'path';
+import fs from 'fs';
 
 import resize from '../../modules/image_resize';
-
-import sharp from 'sharp';
-import fs from 'fs';
+import logger from '../../utilities/logger';
 
 // Endpoint Access to Images
 const endpoint_full = 'assets/full/';
@@ -65,7 +63,6 @@ images.get('/', logger, async (req, res, next) => {
         resized = true;
         // Image access online via endpoint
         image_path = path.join(endpoint_thumb, thumb_filename);
-
       } catch (e) {
         // error processing image goes here
         console.log('Image processing failed!');

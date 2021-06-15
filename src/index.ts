@@ -1,11 +1,10 @@
 import express from 'express';
-import { promises as fsPromises } from 'fs';
 import routes from './routes/api/routes';
 import logger from './utilities/logger';
 import path from 'path';
 
 // Get express
-const app = express();
+export const app = express();
 
 // Setup port to 3000
 const port = 3000;

@@ -25,6 +25,6 @@ describe('Test image resize', function() {
     expect(fs.existsSync(output_image_path)).toBeTrue();
 
     // Delete test file
-    fs.unlinkSync(output_image_path)
+    fs.unlinkSync(output_image_path);
   });
 });
