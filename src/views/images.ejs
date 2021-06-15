@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> <title>Image Processing API</title>
+    <link rel="stylesheet" href="views/main.css">
+  </head>
+<body>
+  <h1>Image Processing API</h1>
+  <% if ( noImage ) { %>
+    <div class='noImage'>
+      <h3>No image available!</h3>
+      <p>Please provide a url as http://localhost:3000/api/images?f=bigsur.jpg&w=500&h=400</p>
+    </div>
+  <% } else { %>
+    <% if ( resized ) { %>
+      <div id="image-container">
+        <h3>Image was resized with:</h3>
+        <div><span class='param'>Width</span>: <%= width %></div>
+        <div><span class='param'>Height</span>: <%= height %></div>
+        <p>Path to image: <%= output_image_path %></p>
+        <img class='sized-image' src="<%= output_image_path %>">     
+      </div>
+    <% } else { %>
+      <div id="image-container">
+        <h3>You're watching the original Image</h3>
+        <p>To resize, please provide a url as http://localhost:3000/api/images?f=bigsur.jpg&w=500&h=400</p>
+        <p>Path to image: <%= output_image_path %></p>
+        <img class='sized-image' src="<%= output_image_path %>">   
+      </div>
+      
+    <% } %> 
+  <% } %>
+  
+</body>
+</html>
