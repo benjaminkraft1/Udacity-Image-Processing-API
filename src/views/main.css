@@ -19,18 +19,6 @@ body {
 .param {
   color: red;
 }
-.image-info {
-  margin-bottom: 2%;
-}
-.example {
-  color: gray;
-}
 .noImage > h3{
   color: red;
-}
-.pageNotFound{
-  font-size: 100px;
-  text-align: center;
-  font-weight: 300;
-  color: blanchedalmond;
 }
