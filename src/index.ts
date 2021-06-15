@@ -15,7 +15,6 @@ app.listen(port, () => {
   console.log(`Image Processing API Server started at localhost:${port}`);
 });
 
-
 app.get('/', logger, (req, res) => {
   res.send('Index Page');
 });
@@ -23,10 +22,7 @@ app.get('/', logger, (req, res) => {
 // Use router defined in another file
 app.use('/api', routes);
 
-
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger)
-
-
+app.use(logger);

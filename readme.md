@@ -18,14 +18,16 @@ Create folders and files for what you anticipate you will need for the project.
 You have quite a few dependencies that all need to work together. Sometimes it's easiest to write some simple js functions to test that all of your dependencies work together before you begin adding any functionality.
 * Does your TypeScript compile?
 * Do your Eslint and Prettier scripts work?
-    * lint: []
+    * lint: [\]
     * prettier: [x] 
 * Are you able to write and pass a basic unit test?
 
-## Set up your server and create an API endpoint. 
+## Set up your server and create an API endpoint. [x]
 Even though this application is fairly straightforward, you still want to set it up in a scalable way. How can you set up your server and route so that your project remains scalable? Only one endpoint is required. It's best to create this and test that it is working before you move on.
 
-## Install Sharp and configure endpoint. 
+Endpoint: `localhost:3000/api/images`
+
+## Install Sharp and configure endpoint. [x]
 Documentation for Sharp can be found here. It is required that you create a separate module for your processing functionality and import it into your route. It is only required that you add resizing, but you may add additional processing if you choose to extend your application. It is also only required that you work with jpg files, so keep that in mind if you choose to use your own images and they are other formats.
 * Pay close attention to if you need to use asynchronous code or not. If you do, make sure you stay consistent throughout your application.
 * There is limited information on using Sharp with TypeScript, but don't let that be a blocker. Think about what type the Sharp constructor would return. Have a look at the complete documentation and the examples it provides.
@@ -33,7 +35,7 @@ Documentation for Sharp can be found here. It is required that you create a sepa
 ## Write your tests. 
 If you haven't already been writing unit tests, now would be the time to start. Think about what you should test? At a minimum, you should have at least one test for your endpoint and at least one test for your image processing, but there are many different tests you could create.
 
-## Add caching. 
+## Add caching. [x]
 Add caching to your application so that repeated requests to your endpoint use pre-stored images rather than regenerating a new image each time.
 
 ## Test, Debug, and Refactor. 

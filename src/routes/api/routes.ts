@@ -1,5 +1,5 @@
 import express from 'express';
-import images from '../../modules/images';
+import images from './images';
 import path from 'path';
 import logger from '../../utilities/logger';
 
