@@ -104,9 +104,9 @@ function resize(
   return new Promise((resolve) => {
     setTimeout(() => {
       console.log("Resizing original image: ", inputPath, " - saving as: ", outputPath)
-
-      const readStream: fs.ReadStream = fs.createReadStream(inputPath);
-      const writeStream: fs.WriteStream = fs.createWriteStream(outputPath);
+      
+      const readStream: fs.ReadStream = fs.createReadStream(path.resolve(__dirname, '../' + inputPath));
+      const writeStream: fs.WriteStream = fs.createWriteStream(path.resolve(__dirname, '../' + outputPath));
 
       writeStream.on('error', () => console.log('Error'));
       writeStream.on('close', () => console.log('Successfully saved'));
