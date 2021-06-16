@@ -32,7 +32,7 @@ function resize(
       // Resize
       transform = transform
         .resize(width, height)
-        .on('info', fileInfo => console.log('Resize successful!'));
+        .on('info', fileInfo => console.log('Resize successful!: ', fileInfo));
 
       readStream.pipe(transform).pipe(writeStream);
       resolve('slow');

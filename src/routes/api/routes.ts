@@ -5,7 +5,7 @@ import logger from '../../utilities/logger';
 
 const routes = express.Router();
 
-routes.get('/', logger, (req, res) => {
+routes.get('/', logger, (req: express.Request, res: express.Response) => {
   res.send('Main api route!');
 });
 

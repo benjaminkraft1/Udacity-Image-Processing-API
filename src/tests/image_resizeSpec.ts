@@ -11,8 +11,8 @@ describe('Test image resize', function() {
       path.join(images_full_url_path, 'bigsur.jpg')
     );
 
-    const width: number = 300;
-    const height: number = 300;
+    const width = 300;
+    const height = 300;
 
     const thumb_filename = `bigsur_${width}_${height}.jpg`;
 

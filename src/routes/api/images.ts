@@ -15,11 +15,11 @@ const thumb_path = path.resolve(__dirname, '../../assets/thumb/');
 
 const images = express.Router();
 
-images.get('/', logger, async (req, res, next) => {
+images.get('/', logger, async (req: express.Request, res: express.Response) => {
   // Query from url
   const { h, w, f } = req.query;
-  const width: number | null = w ? parseInt(w as string, 10) : null;
-  const height: number | null = h ? parseInt(h as string, 10) : null;
+  const width: number | null = w ? parseInt(w.toString(), 10) : null;
+  const height: number | null = h ? parseInt(h.toString(), 10) : null;
   const file: string = f as string;
 
   console.log('Filename: ', f);
@@ -49,20 +49,29 @@ images.get('/', logger, async (req, res, next) => {
         // Local path to input image
         const input_image_path: string = path.join(full_image_path, file);
 
-        // Local path to transformed image
-        const thumb_filename = `${filename}_${width}_${height}.${ext}`;
-        const output_image_path: string = path.join(thumb_path, thumb_filename);
-
-        if (!fs.existsSync(output_image_path)) {
-          // Only resize if not already existing
-          await resize(input_image_path, output_image_path, width, height);
+        // Check if input file exists
+        if (!fs.existsSync(input_image_path)) {
+          console.error('Input File not existing');
+          noImage = true;
         } else {
-          console.log('Image already resized, taking it from thumb folder');
-        }
+          // Local path to transformed image
+          const thumb_filename = `${filename}_${width}_${height}.${ext}`;
+          const output_image_path: string = path.join(
+            thumb_path,
+            thumb_filename
+          );
 
-        resized = true;
-        // Image access online via endpoint
-        image_path = path.join(endpoint_thumb, thumb_filename);
+          if (!fs.existsSync(output_image_path)) {
+            // Only resize if not already existing
+            await resize(input_image_path, output_image_path, width, height);
+          } else {
+            console.log('Image already resized, taking it from thumb folder');
+          }
+
+          resized = true;
+          // Image access online via endpoint
+          image_path = path.join(endpoint_thumb, thumb_filename);
+        } // END Check if input file exists
       } catch (e) {
         // error processing image goes here
         console.log('Image processing failed!');

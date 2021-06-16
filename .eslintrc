@@ -19,7 +19,8 @@
     },
     "env": {
       "node": true,
-      "es6": true
+      "es6": true,
+      "jasmine": true
     },
-    "parser": "babel-eslint"
+    "parser": "@typescript-eslint/parser"
 }

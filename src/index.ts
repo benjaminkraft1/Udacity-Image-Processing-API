@@ -14,7 +14,7 @@ app.listen(port, () => {
   console.log(`Image Processing API Server started at localhost:${port}`);
 });
 
-app.get('/', logger, (req, res) => {
+app.get('/', logger, (req: express.Request, res: express.Response) => {
   res.send('Index Page');
 });
 

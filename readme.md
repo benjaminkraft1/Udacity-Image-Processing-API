@@ -40,7 +40,7 @@ You can reach the main API Route here:`http://localhost:3000/api`. Right now the
 
 
 ### 3. Image Resize Endpoint
-`http://localhost:3000/images?f=<picture>&w=<width>&h=<height>`
+`http://localhost:3000/api/images?f=<pictureName>.<fileExtension>&w=<width>&h=<height>`
 
 This Endpoint gives you the possibility to display a image and optianlly resize it if wanted.
 You can currently choose between three pictures (e.g. `?f=bigsur.jpg`) to test the behavior.
